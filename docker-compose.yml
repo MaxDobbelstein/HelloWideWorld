@@ -1,0 +1,19 @@
+version: '2.4'
+
+services:
+  hellowideworld:
+    image: hellowideworld
+    build:
+      context: .\HelloWideWorld
+      dockerfile: Dockerfile   
+    platform: windows
+  wideworldsql:
+    image: 192.168.0.124:5000/ms-sql:v2    
+    environment: 
+     - ACCEPT_EULA=Y
+     - SA_PASSWORD=Testing1122
+    platform: windows
+  redisdocker: 
+    image: redis
+    platform: linux
+    
